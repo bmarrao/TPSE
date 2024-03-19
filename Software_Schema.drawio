@@ -1,0 +1,73 @@
+<mxfile host="Electron" modified="2024-03-19T23:04:43.475Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.0.4 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="tXJaKBLI0LDcw8j16mos" version="24.0.4" type="device">
+  <diagram name="Página-1" id="d-Ja3cMdsOpGmRD5EREL">
+    <mxGraphModel dx="980" dy="658" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="U685pt1_12zOMQoYTGkL-1" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="40" width="530" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="U685pt1_12zOMQoYTGkL-2" value="User Agent / Android" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="369" y="50" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="U685pt1_12zOMQoYTGkL-3" value="TCP Client" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="170" y="100" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="U685pt1_12zOMQoYTGkL-4" value="Control Logic" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="100" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="U685pt1_12zOMQoYTGkL-5" value="Message Management" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="430" y="100" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="U685pt1_12zOMQoYTGkL-6" value="UI" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="100" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="U685pt1_12zOMQoYTGkL-8" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="203.5" y="280" width="441" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="U685pt1_12zOMQoYTGkL-9" value="Camera Agent / Raspberry PI" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="369" y="290" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="U685pt1_12zOMQoYTGkL-10" value="TCP Client / Server" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="213.5" y="340" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="U685pt1_12zOMQoYTGkL-12" value="Multi-Thread Message Management" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="364.5" y="340" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="U685pt1_12zOMQoYTGkL-13" value="UART &quot;Receiver&quot;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="514.5" y="340" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="U685pt1_12zOMQoYTGkL-14" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;strokeWidth=2;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="U685pt1_12zOMQoYTGkL-8" target="U685pt1_12zOMQoYTGkL-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="414" y="280" as="sourcePoint" />
+            <mxPoint x="474" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="U685pt1_12zOMQoYTGkL-16" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="141.75" y="510" width="566.5" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="U685pt1_12zOMQoYTGkL-17" value="Sensor Agent / Arduino" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="373.25" y="520" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="U685pt1_12zOMQoYTGkL-18" value="TCP Client / Server" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="151.75" y="570" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="U685pt1_12zOMQoYTGkL-19" value="Multi-Thread Message Management" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="291.75" y="570" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="U685pt1_12zOMQoYTGkL-20" value="UART &quot;Receiver&quot;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="572.75" y="570" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="U685pt1_12zOMQoYTGkL-21" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;strokeWidth=2;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="423.5" y="510" as="sourcePoint" />
+            <mxPoint x="424.5" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="U685pt1_12zOMQoYTGkL-23" value="Control Logic" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="428.25" y="570" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
