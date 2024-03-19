@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-03-19T17:01:47.441Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" etag="MxOMTIqED3I-iut4qOEm" version="24.0.7" type="device">
+<mxfile host="app.diagrams.net" modified="2024-03-19T17:21:17.204Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" etag="VfThV-8l15uijKLKtiW-" version="24.0.7" type="device">
   <diagram name="Página-1" id="G9qV2_cgcIiTJS6-VjRx">
-    <mxGraphModel dx="1242" dy="654" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1242" dy="654" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -14,7 +14,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="jnMj2uS2hlACL-9mmT51-2" value="On" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="230" y="70" width="120" height="80" as="geometry" />
+          <mxGeometry x="185" y="70" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="jnMj2uS2hlACL-9mmT51-6" value="redLightOn/" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="160" y="50" width="60" height="30" as="geometry" />
@@ -26,7 +26,7 @@
           <mxGeometry y="50" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="jnMj2uS2hlACL-9mmT51-9" value="Camera :" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="400" y="55" width="60" height="30" as="geometry" />
+          <mxGeometry x="396" y="7" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="jnMj2uS2hlACL-9mmT51-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="jnMj2uS2hlACL-9mmT51-10" target="jnMj2uS2hlACL-9mmT51-12" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -83,7 +83,7 @@
           <mxGeometry x="30" y="290" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="jnMj2uS2hlACL-9mmT51-57" value="Arduino :" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="520" y="330" width="60" height="30" as="geometry" />
+          <mxGeometry x="497.5" y="328" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="jnMj2uS2hlACL-9mmT51-62" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=0;entryDy=0;exitX=1;exitY=0;exitDx=0;exitDy=0;" parent="1" source="jnMj2uS2hlACL-9mmT51-58" target="jnMj2uS2hlACL-9mmT51-60" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -102,7 +102,7 @@
             <mxPoint x="281.57359312880726" y="341.7157287525381" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="jnMj2uS2hlACL-9mmT51-70" value="recordingArduino / recordingRpi = True, redLightOn = True, recordingArduino" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+        <mxCell id="jnMj2uS2hlACL-9mmT51-70" value="(movement v bell ) / recordingRpi = True, redLightOn = True" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="600" y="350" width="240" height="30" as="geometry" />
         </mxCell>
         <mxCell id="jnMj2uS2hlACL-9mmT51-73" value="bell" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
@@ -117,8 +117,8 @@
         <mxCell id="jnMj2uS2hlACL-9mmT51-77" value="ring / recordingArduino = True" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="230" y="525" width="150" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="jnMj2uS2hlACL-9mmT51-78" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;&quot;&gt;not (camOn) /&amp;nbsp; redLightOn = false, recordingArduino = False&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="610" y="459" width="290" height="40" as="geometry" />
+        <mxCell id="jnMj2uS2hlACL-9mmT51-78" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;&quot;&gt;not (camOn) /&amp;nbsp; redLightOn = false&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="633" y="455" width="290" height="40" as="geometry" />
         </mxCell>
         <mxCell id="V_KPOJeTU2iG-xsF3bGE-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="V_KPOJeTU2iG-xsF3bGE-1" target="V_KPOJeTU2iG-xsF3bGE-2" edge="1">
           <mxGeometry relative="1" as="geometry" />
