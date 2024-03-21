@@ -1,6 +1,6 @@
-<mxfile host="Electron" modified="2024-03-20T10:22:54.984Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.0.4 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="0aIDkarq_BgkoXKJ_b7q" version="24.0.4" type="device">
+<mxfile host="Electron" modified="2024-03-21T16:51:05.326Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.0.4 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="nGCKMKQDubvBxAU8evsj" version="24.0.4" type="device">
   <diagram name="Página-1" id="d-Ja3cMdsOpGmRD5EREL">
-    <mxGraphModel dx="980" dy="657" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1400" dy="940" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -23,48 +23,70 @@
           <mxGeometry x="560" y="100" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="U685pt1_12zOMQoYTGkL-8" value="" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="203.5" y="280" width="441" height="150" as="geometry" />
+          <mxGeometry x="204.5" y="520" width="441" height="150" as="geometry" />
         </mxCell>
         <mxCell id="U685pt1_12zOMQoYTGkL-9" value="Camera Agent / Raspberry PI" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="369" y="290" width="110" height="30" as="geometry" />
+          <mxGeometry x="370" y="530" width="110" height="30" as="geometry" />
         </mxCell>
         <mxCell id="U685pt1_12zOMQoYTGkL-10" value="TCP Client / Server" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="213.5" y="340" width="120" height="60" as="geometry" />
+          <mxGeometry x="214.5" y="580" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="U685pt1_12zOMQoYTGkL-12" value="Multi-Thread Message Management" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="364.5" y="340" width="120" height="60" as="geometry" />
+          <mxGeometry x="365.5" y="580" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="U685pt1_12zOMQoYTGkL-13" value="UART &quot;Receiver&quot;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="514.5" y="340" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="U685pt1_12zOMQoYTGkL-14" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;strokeWidth=2;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="U685pt1_12zOMQoYTGkL-8" target="U685pt1_12zOMQoYTGkL-1" edge="1">
+        <mxCell id="U685pt1_12zOMQoYTGkL-14" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;strokeWidth=2;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="U685pt1_12zOMQoYTGkL-8" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="414" y="280" as="sourcePoint" />
-            <mxPoint x="474" y="200" as="targetPoint" />
+            <mxPoint x="425" y="450" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="U685pt1_12zOMQoYTGkL-16" value="" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="141.75" y="510" width="566.5" height="150" as="geometry" />
+          <mxGeometry x="241" y="750" width="380" height="150" as="geometry" />
         </mxCell>
         <mxCell id="U685pt1_12zOMQoYTGkL-17" value="Sensor Agent / Arduino" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="373.25" y="520" width="110" height="30" as="geometry" />
+          <mxGeometry x="374.25" y="760" width="110" height="30" as="geometry" />
         </mxCell>
         <mxCell id="U685pt1_12zOMQoYTGkL-18" value="TCP Server" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="151.75" y="570" width="120" height="60" as="geometry" />
+          <mxGeometry x="254.25" y="810" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="U685pt1_12zOMQoYTGkL-19" value="Multi-Thread Message Management" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="291.75" y="570" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="U685pt1_12zOMQoYTGkL-20" value="UART &quot;Transmitter&quot;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="572.75" y="570" width="120" height="60" as="geometry" />
+          <mxGeometry x="484.25" y="810" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="U685pt1_12zOMQoYTGkL-23" value="Control Logic" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="428.25" y="570" width="120" height="60" as="geometry" />
+          <mxGeometry x="511" y="580" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="GsarNU29cKA1wkzwrxWq-1" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;" edge="1" parent="1">
+        <mxCell id="GsarNU29cKA1wkzwrxWq-1" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="420" y="510" as="sourcePoint" />
-            <mxPoint x="420" y="430" as="targetPoint" />
+            <mxPoint x="421" y="750" as="sourcePoint" />
+            <mxPoint x="421" y="670" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="37pQkNyqDcrLIYpBenfs-1" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="235.5" y="300" width="380" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="37pQkNyqDcrLIYpBenfs-2" value="Database Agent / Postgres" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="357.13" y="310" width="136.75" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="37pQkNyqDcrLIYpBenfs-3" value="PostgreSQL" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="248.75" y="360" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="37pQkNyqDcrLIYpBenfs-4" value="Flask" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="478.75" y="360" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="37pQkNyqDcrLIYpBenfs-5" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;strokeWidth=2;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" target="U685pt1_12zOMQoYTGkL-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="425" y="300" as="sourcePoint" />
+            <mxPoint x="425" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="37pQkNyqDcrLIYpBenfs-6" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;strokeWidth=2;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="U685pt1_12zOMQoYTGkL-8" target="U685pt1_12zOMQoYTGkL-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="190" y="500" as="sourcePoint" />
+            <mxPoint x="230" y="220" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="160" y="480" />
+              <mxPoint x="160" y="240" />
+            </Array>
           </mxGeometry>
         </mxCell>
       </root>
