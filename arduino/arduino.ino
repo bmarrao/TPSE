@@ -17,8 +17,16 @@ const char* hostname = "my-arduino"; // Change this to your desired hostname
 WiFiClient client;
 WiFiClient client_server;
 
+#include <UnoWiFiDevEd.h>
+
+
 void setup() 
 {
+
+  pinMode(ledPin, OUTPUT);
+
+  digitalWrite(ledPin, LOW); // Turn the LED off
+
 
   //Initialize serial and wait for port to open:
 
