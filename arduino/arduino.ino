@@ -1,23 +1,19 @@
 #include <WiFi.h>
 #include <SPI.h>
-
+#define BUTTON_PIN 2
 char ssid[] = "Wifi-Cima";     //  your network SSID (name)
-char pass[] = "letbren3";    // your network password
-int keyIndex = 0;            // your network key Index number (needed only for WEP)
+char pass[] = "";    // your network password
 const int ledPin = 13;
 int status = WL_IDLE_STATUS;
 // if you don't want to use DNS (and reduce your sketch size)
 // use the numeric IP instead of the name for the server:
 WiFiServer server(80);
-IPAddress comm(74,125,232,128);  // numeric IP for Google (no DNS)
-const char* hostname = "my-arduino"; // Change this to your desired hostname
-
+IPAddress comm(192,168,1,76);  // numeric IP for Google (no DNS)
 
 
 WiFiClient client;
 WiFiClient client_server;
 
-#include <UnoWiFiDevEd.h>
 
 
 void setup() 
@@ -26,6 +22,8 @@ void setup()
   pinMode(ledPin, OUTPUT);
 
   digitalWrite(ledPin, LOW); // Turn the LED off
+
+  pinMode(BUTTON_PIN, INPUT_PULLUP);
 
 
   //Initialize serial and wait for port to open:
@@ -71,14 +69,15 @@ void setup()
 }
 void loop() 
 {
-
-
-    
-
-    // IF BUTTON IS PRESSED OR MOVEMENT IS DETECED 
-    if (false)
+    Serial.println(digitalRead(BUTTON_PIN));
+    if (digitalRead(BUTTON_PIN))
     {
-      sendMessage();
+       digitalWrite(ledPin, LOW); // Turn the LED on
+    }
+    else 
+    {
+        digitalWrite(ledPin, HIGH ); // Turn the LED off
+  
     }
     
     client_server = server.available();
@@ -116,11 +115,7 @@ void sendMessage()
 
     // Make a HTTP request:
 
-    client.println("GET /search?q=arduino HTTP/1.1");
-
-    client.println("Host: www.google.com");
-
-    client.println("Connection: close");
+    client.println("movementBell");
 
     client.println();
     
