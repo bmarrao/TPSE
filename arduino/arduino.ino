@@ -2,13 +2,14 @@
 #include <SPI.h>
 #define BUTTON_PIN 2
 char ssid[] = "Wifi-Cima";     //  your network SSID (name)
-char pass[] = "";    // your network password
-const int ledPin = 13;
+char pass[] = "letbren3";    // your network password
+const int ledPin = 12;
 int status = WL_IDLE_STATUS;
 // if you don't want to use DNS (and reduce your sketch size)
 // use the numeric IP instead of the name for the server:
 WiFiServer server(80);
-IPAddress comm(192,168,1,76);  // numeric IP for Google (no DNS)
+const char* host = "example.com"; // domain name
+const int port = 80; // port number
 
 
 WiFiClient client;
@@ -70,12 +71,15 @@ void setup()
 void loop() 
 {
     Serial.println(digitalRead(BUTTON_PIN));
+
     if (digitalRead(BUTTON_PIN))
     {
-       digitalWrite(ledPin, LOW); // Turn the LED on
+      digitalWrite(ledPin, LOW); // Turn the LED on
     }
     else 
     {
+        Serial.println("Button Clicked");
+        sendMessage();
         digitalWrite(ledPin, HIGH ); // Turn the LED off
   
     }
@@ -106,21 +110,16 @@ void process(String command) {
   }
 }
 
-void sendMessage()
-{
-  if (client.connect(comm, 80)) 
-  {
+void sendMessage() {
+  Serial.println("Sending Message");
 
-    Serial.println("connected to server");
-
-    // Make a HTTP request:
-
-    client.println("movementBell");
-
-    client.println();
-    
+  if (client.connect(host, port)) {
+    Serial.println("Connected to server");
+    client.print("movementBell\n");
     client.stop();
-
+    Serial.println("Message sent and client stopped");
+  } else {
+    Serial.println("Connection to server failed");
   }
 }
 

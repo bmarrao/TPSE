@@ -1,7 +1,7 @@
 import socket
 
 SERVER_IP = '192.168.0.109'
-SERVER_PORT = 80
+SERVER_PORT = 3000
 
 message = "turnLightOn"
 
