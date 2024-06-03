@@ -14,7 +14,7 @@ def main():
         print("Connected to server.")
 
         # Send a message to the server
-        message = "turnLightOn"
+        message = "turnLightOff"
         client_socket.sendall(message.encode())
         print(f"Sent message: {message}")
 

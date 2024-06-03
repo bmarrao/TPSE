@@ -4,7 +4,7 @@
 #define BUTTON_PIN 2
 char ssid[] = "Wifi-Cima";     // your network SSID (name)
 char pass[] = "letbren3";      // your network password
-const int ledPin = 12;
+const int ledPin = 9;
 int status = WL_IDLE_STATUS;
 
 // Use the numeric IP address instead of the name for the server
@@ -18,7 +18,6 @@ WiFiClient client_server;
 void setup() {
   pinMode(ledPin, OUTPUT);
   digitalWrite(ledPin, LOW); // Turn the LED off
-
   pinMode(BUTTON_PIN, INPUT_PULLUP);
 
   // Initialize serial and wait for port to open:
@@ -26,7 +25,6 @@ void setup() {
   while (!Serial) {
     ; // wait for serial port to connect. Needed for native USB port only
   }
-
   // Attempt to connect to WiFi network:
   while (status != WL_CONNECTED) {
     Serial.print("Attempting to connect to SSID: ");
@@ -36,8 +34,9 @@ void setup() {
     status = WiFi.begin(ssid, pass);
 
     // Wait 10 seconds for connection:
-    delay(10000);
+    delay(5000);
   }
+
 
   Serial.println("Connected to wifi");
   printWifiStatus();
@@ -49,18 +48,21 @@ void setup() {
   // Print IP address to serial monitor
   Serial.print("IP address: ");
   Serial.println(WiFi.localIP());
+
 }
 
 void loop() {
 
-  if (digitalRead(BUTTON_PIN)) {
-    digitalWrite(ledPin, LOW); // Turn the LED on
+    Serial.println("Loop");
+
+
+  if (digitalRead(BUTTON_PIN)) 
+  {
   } else {
     Serial.println("Button Clicked");
     sendMessage();
-    digitalWrite(ledPin, HIGH); // Turn the LED off
-  }
-
+  }  
+  
   client_server = server.available();
 
   if (client_server) {
@@ -70,7 +72,6 @@ void loop() {
     process(request);
     client_server.stop();
   }
-
   delay(50);
 }
 
