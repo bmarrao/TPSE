@@ -2,7 +2,7 @@ import socket
 
 def main():
     # Server IP address and port
-    SERVER_IP = "192.168.0.109"
+    SERVER_IP = "172.20.10.3"
     SERVER_PORT = 80
 
     # Create a socket object

@@ -60,7 +60,8 @@ void loop() {
   {
   } else {
     Serial.println("Button Clicked");
-    sendMessage();
+    sendMessageToServer();
+    delay(500);
   }  
   
   client_server = server.available();
@@ -84,14 +85,36 @@ void process(String command) {
   }
 }
 
-void sendMessage() {
+void sendMessageToServer() {
   Serial.println("Sending Message");
 
-  if (client.connect(serverIP, 3000)) {
+  if (client.connect(serverIP, port)) {
     Serial.println("Connected to server");
-    client.print("movementBell\n");
+    // Send HTTP GET request
+    client.println("GET /movementBell HTTP/1.1");
+    client.println("Host: 192.168.0.125");
+    client.println("Connection: close");
+    client.println();
+    delay(100); // Ensure the request is fully sent
+    while (client.available()) {
+
+    char c = client.read();
+
+    Serial.write(c);
+
+    }
+
+    while(client.connected())
+    {
+      Serial.println("Client Still connected");
+
+    }
+    Serial.println();
+
+    Serial.println("disconnecting from server.");
+
     client.stop();
-    Serial.println("Message sent and client stopped");
+    Serial.println("HTTP request sent and client stopped");    
   } else {
     Serial.println("Connection to server failed");
   }
