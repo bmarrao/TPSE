@@ -54,18 +54,22 @@ void loop() {
 
     Serial.println("Loop");
 
-
+  //Test if button has been pressed
   if (digitalRead(BUTTON_PIN)) 
   {
   } else {
+    // If it has send message to server 
     Serial.println("Button Clicked");
     sendMessageToServer();
     delay(500);
   }  
-  
+
+  // Listen to requests
   client_server = server.available();
 
+  // Test if new connection was made
   if (client_server) {
+    // Process request received
     Serial.println("New client connected");
     String request = client_server.readStringUntil('\r');
     Serial.println("Request: " + request);
@@ -97,7 +101,7 @@ void sendMessageToServer() {
     client.println("Host: 192.168.148.231");
     client.println("Connection: close");
     client.println();
-    delay(100); // Ensure the request is fully sent
+    delay(100); 
     while (client.available()) {
 
     char c = client.read();
@@ -106,6 +110,7 @@ void sendMessageToServer() {
 
     }
 
+    // Wait for the client to send its message
     while(client.connected())
     {
       Serial.println("Client Still connected");
@@ -114,7 +119,7 @@ void sendMessageToServer() {
     Serial.println();
 
     Serial.println("disconnecting from server.");
-
+    // When client finised close communication chanels
     client.stop();
     digitalWrite(ledPin, LOW); // Turn the LED off
 
