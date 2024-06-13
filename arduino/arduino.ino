@@ -2,13 +2,13 @@
 #include <SPI.h>
 
 #define BUTTON_PIN 2
-char ssid[] = "Wifi-Cima";     // network SSID (name)
-char pass[] = "letbren3";      // network password
+char ssid[] = "S23_Ultra_Network";     // network SSID (name)
+char pass[] = "podesaceder8888";      // network password
 const int ledPin = 9;
 int status = WL_IDLE_STATUS;
 
-IPAddress serverIP(192, 168, 0, 125); // IP address for raspberry
-const int port = 3000; // HTTP por  t
+IPAddress serverIP(192, 168, 148, 254); // IP address for raspberry
+const int port = 8888; // HTTP por  t
 
 WiFiServer server(80);
 WiFiClient client;
@@ -91,7 +91,7 @@ void sendMessageToServer() {
     Serial.println("Connected to server");
     // Send HTTP GET request
     client.println("GET /api/bell HTTP/1.1");
-    client.println("Host: 192.168.0.125");
+    client.println("Host: 192.168.148.254");
     client.println("Connection: close");
     client.println();
     delay(100); // Ensure the request is fully sent
