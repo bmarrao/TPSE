@@ -1,0 +1,3 @@
+[submodule "doorbell_camera"]
+	path = doorbell_camera
+	url = https://github.com/gdsantos2002/doorbell_camera
