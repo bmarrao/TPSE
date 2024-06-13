@@ -1,23 +1,22 @@
 import os
-import cv2
-import time
+# import cv2
+# import time
 import psycopg2
-import threading
-from flask_cors import CORS
+# import threading
 from flask import Flask, jsonify, send_file, Response
-from datetime import datetime
+# from datetime import datetime
 from dotenv import load_dotenv
 
 from ip import get_current_ip
 from msg_arduino import msg_arduino
+from record_video import record_video
 
 # load the environment variables from the .env file
 load_dotenv()
 MAX_ATTEMPTS = 5    # maximum number of attempts to connect to the database
 RECORDING = False
-video = cv2.VideoCapture(0)
+# video = cv2.VideoCapture(0)
 api = Flask(__name__)
-CORS(api)
 HOST=os.getenv('HOST')
 DATABASE=os.getenv('DATABASE')
 USERNAME=os.getenv('USERNAME')
@@ -37,78 +36,78 @@ def create_db_connection() :
     )
 
 
-# TODO: test
-# generator function to stream video frames
-def video_stream() :
-    while True :
-        ret, frame = video.read()
+# # TODO: test
+# # generator function to stream video frames
+# def video_stream() :
+#     while True :
+#         ret, frame = video.read()
 
-        if not ret :
-            break
-        else :
-            ret, buffer = cv2.imencode('.jpeg', frame)
-            frame = buffer.tobytes()
-            yield (b'--frame\r\n' b'Content-type: image/jpeg\r\n\r\n' + frame + b'\r\n')
+#         if not ret :
+#             break
+#         else :
+#             ret, buffer = cv2.imencode('.jpeg', frame)
+#             frame = buffer.tobytes()
+#             yield (b'--frame\r\n' b'Content-type: image/jpeg\r\n\r\n' + frame + b'\r\n')
 
 
-def record_video() :
-    print('start recording')
-    global RECORDING
-    # timestamp format: 'YYYY-MM-DD HH:MM:SS'
-    current_timestamp = datetime.now()
-    timestamp = current_timestamp.strftime('%Y-%m-%d %H:%M:%S')
-    video_id = current_timestamp.strftime('%Y%m%d%H%M%S')
-    video_name = current_timestamp.strftime('%Y%m%d_%H%M%S')
-    video_filename = f'storage/{video_name}.mp4'
-    file_path = os.path.join(MAIN_DIRECTORY, video_filename)
+# def record_video() :
+#     print('start recording')
+#     global RECORDING
+#     # timestamp format: 'YYYY-MM-DD HH:MM:SS'
+#     current_timestamp = datetime.now()
+#     timestamp = current_timestamp.strftime('%Y-%m-%d %H:%M:%S')
+#     video_id = current_timestamp.strftime('%Y%m%d%H%M%S')
+#     video_name = current_timestamp.strftime('%Y%m%d_%H%M%S')
+#     video_filename = f'storage/{video_name}.mp4'
+#     file_path = os.path.join(MAIN_DIRECTORY, video_filename)
 
-    fourcc = cv2.VideoWriter_fourcc(*'mp4v')
-    out = cv2.VideoWriter(file_path, fourcc, 30.0, (640, 480))
+#     fourcc = cv2.VideoWriter_fourcc(*'mp4v')
+#     out = cv2.VideoWriter(file_path, fourcc, 30.0, (640, 480))
 
-    if not out.isOpened() :
-        print('Error: failed to open video file')
-        return
+#     if not out.isOpened() :
+#         print('Error: failed to open video file')
+#         return
     
-    if not video.isOpened() :
-        print('Error: failed to open video stream')
-        return
+#     if not video.isOpened() :
+#         print('Error: failed to open video stream')
+#         return
     
-    start_time = time.time()
-    msg_arduino('turnLightOn')
+#     start_time = time.time()
+#     msg_arduino('turnLightOn')
 
-    # record video for 30 seconds or until the recording flag is set to False
-    while RECORDING and (time.time() - start_time) < 30 :
-        ret, frame = video.read()
+#     # record video for 30 seconds or until the recording flag is set to False
+#     while RECORDING and (time.time() - start_time) < 30 :
+#         ret, frame = video.read()
 
-        if ret :
-            frame = cv2.resize(frame, (640, 480))
-            out.write(frame)
-        else :
-            print('Error: failed to read video frame')
+#         if ret :
+#             frame = cv2.resize(frame, (640, 480))
+#             out.write(frame)
+#         else :
+#             print('Error: failed to read video frame')
 
-    print('stop recording')
-    msg_arduino('turnLightOff')
-    RECORDING = False
-    out.release()
+#     print('stop recording')
+#     msg_arduino('turnLightOff')
+#     RECORDING = False
+#     out.release()
 
-    connection = create_db_connection()
-    cursor = connection.cursor()
+#     connection = create_db_connection()
+#     cursor = connection.cursor()
 
-    try :
-        cursor.execute(
-            "INSERT INTO videos (video_id, url, created_at) VALUES (%s, %s, %s);",
-            (video_id, video_filename, timestamp)
-        )
-        connection.commit()
-    except Exception as e :
-        print(e)
-        # rollback the transaction
-        connection.rollback()
-        # commit to reset the connection state
-        connection.commit()
-    finally :
-        cursor.close()
-        connection.close()
+#     try :
+#         cursor.execute(
+#             "INSERT INTO videos (video_id, url, created_at) VALUES (%s, %s, %s);",
+#             (video_id, video_filename, timestamp)
+#         )
+#         connection.commit()
+#     except Exception as e :
+#         print(e)
+#         # rollback the transaction
+#         connection.rollback()
+#         # commit to reset the connection state
+#         connection.commit()
+#     finally :
+#         cursor.close()
+#         connection.close()
 
 
 # test connection with API
@@ -117,22 +116,25 @@ def test_connection() :
     return jsonify({'message': 'API is working'}), 200
 
 
-# TODO: test
-# send the live stream from the camera with type multipart/x-mixed-replace
-@api.route('/api/live_stream', methods=['GET'])
-def get_live_stream() :
-    return Response(video_stream(), mimetype='multipart/x-mixed-replace; boundary=frame')
+# # TODO: test
+# # send the live stream from the camera with type multipart/x-mixed-replace
+# @api.route('/api/live_stream', methods=['GET'])
+# def get_live_stream() :
+#     return Response(video_stream(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 
 # needed multicore raspberry pi
 @api.route('/api/bell', methods=['GET'])
 def start_recording() :
-    global RECORDING, recording_thread
-
+    global RECORDING
+    # global RECORDING, recording_thread
+    
     if not RECORDING : 
         RECORDING = True
-        recording_thread = threading.Thread(target=record_video)
-        recording_thread.start()
+        # recording_thread = threading.Thread(target=record_video)
+        # recording_thread.start()
+        record_video()
+        RECORDING = False
 
     return jsonify({'message': 'Started recording for 30 seconds'}), 200
 

@@ -7,7 +7,7 @@ char pass[] = "podesaceder8888";      // network password
 const int ledPin = 9;
 int status = WL_IDLE_STATUS;
 
-IPAddress serverIP(192, 168, 148, 254); // IP address for raspberry
+IPAddress serverIP(192, 168, 148, 231); // IP address for raspberry
 const int port = 8888; // HTTP por  t
 
 WiFiServer server(80);
@@ -87,11 +87,14 @@ void process(String command) {
 void sendMessageToServer() {
   Serial.println("Sending Message");
 
+
   if (client.connect(serverIP, port)) {
     Serial.println("Connected to server");
+    digitalWrite(ledPin, HIGH); // Turn the LED off
+
     // Send HTTP GET request
     client.println("GET /api/bell HTTP/1.1");
-    client.println("Host: 192.168.148.254");
+    client.println("Host: 192.168.148.231");
     client.println("Connection: close");
     client.println();
     delay(100); // Ensure the request is fully sent
@@ -113,6 +116,8 @@ void sendMessageToServer() {
     Serial.println("disconnecting from server.");
 
     client.stop();
+    digitalWrite(ledPin, LOW); // Turn the LED off
+
     Serial.println("HTTP request sent and client stopped");    
   } else {
     Serial.println("Connection to server failed");
