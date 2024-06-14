@@ -54,7 +54,7 @@ def record_video() :
     start_time = time.time()
     # msg_arduino('turnLightOn')
 
-    # record video for 30 seconds or until the recording flag is set to False
+    # record video for 15 seconds or until the recording flag is set to False
     while (time.time() - start_time) < 15 :
         ret, frame = video.read()
 
